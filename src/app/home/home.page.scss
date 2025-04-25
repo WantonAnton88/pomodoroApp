@@ -1,27 +1,42 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+#pomodoro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.pomodoro-timer {
+  margin-bottom: 20px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.timer-container {
+  position: relative; /* This allows absolute positioning of the timer text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#container a {
-  text-decoration: none;
+.clock-image {
+  width: 150px; /* Adjust the size of the clock image */
+  height: 150px; /* Adjust the size of the clock image */
+}
+
+.timer-text {
+  position: absolute; /* Position the text over the image */
+  font-size: 2.5rem; /* Adjust the size of the timer text */
+  color: white; /* Set the timer text color */
+  font-weight: bold; /* Make the text bold */
+}
+
+.button-container {
+  margin: 20px 0;
+  width: 80%;
+}
+
+.pomodoro-break-info {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.progress-container {
+  width: 80%;
 }

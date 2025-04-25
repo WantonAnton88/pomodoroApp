@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Pomodoro Timer
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,63 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Pomodoro Timer</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="pomodoro-container" class="ion-padding">
+    <!-- Timer Card -->
+    <div class="pomodoro-timer">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Timer
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="timer-container">
+            <!-- Clock image -->
+            <img src="assets/Clock.png" alt="Clock" class="clock-image" />
+            <!-- Timer text placed over the clock image -->
+            <h2 class="timer-text">25:00</h2>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Start/Pause Buttons -->
+    <div class="button-container">
+      <ion-button expand="block" color="primary">
+        Start Timer
+      </ion-button>
+      <ion-button expand="block" color="secondary">
+        Pause Timer
+      </ion-button>
+    </div>
+
+    <!-- Pomodoro and Break Countdown -->
+    <div class="pomodoro-break-info">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Current Phase
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Work Phase (25 minutes)</p>
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Break Phase
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Short Break (5 minutes)</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </ion-content>
