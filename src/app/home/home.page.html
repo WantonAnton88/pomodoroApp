@@ -14,6 +14,11 @@
   </ion-header>
 
   <div id="pomodoro-container" class="ion-padding">
+    <!-- Real-Time Clock -->
+    <div class="real-time-clock">
+      <h3>Current Time: {{ currentTime }}</h3>
+    </div>
+
     <!-- Timer Card -->
     <div class="pomodoro-timer">
       <ion-card>
@@ -27,19 +32,22 @@
             <!-- Clock image -->
             <img src="assets/Clock.png" alt="Clock" class="clock-image" />
             <!-- Timer text placed over the clock image -->
-            <h2 class="timer-text">25:00</h2>
+            <h2 class="timer-text">{{ getFormattedTime() }}</h2>
           </div>
         </ion-card-content>
       </ion-card>
     </div>
 
-    <!-- Start/Pause Buttons -->
+    <!-- Start/Pause/Reset Buttons -->
     <div class="button-container">
-      <ion-button expand="block" color="primary">
+      <ion-button expand="block" color="primary" (click)="startTimer()" [disabled]="isRunning">
         Start Timer
       </ion-button>
-      <ion-button expand="block" color="secondary">
+      <ion-button expand="block" color="secondary" (click)="pauseTimer()" [disabled]="!isRunning">
         Pause Timer
+      </ion-button>
+      <ion-button expand="block" color="danger" (click)="resetTimer()">
+        Reset Timer
       </ion-button>
     </div>
 
@@ -52,18 +60,7 @@
           </ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <p>Work Phase (25 minutes)</p>
-        </ion-card-content>
-      </ion-card>
-      
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>
-            Break Phase
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>Short Break (5 minutes)</p>
+          <p>{{ isWorkPhase ? 'Work Phase (25 minutes)' : 'Break Phase (5 minutes)' }}</p>
         </ion-card-content>
       </ion-card>
     </div>

@@ -22,9 +22,11 @@
 
 .timer-text {
   position: absolute; /* Position the text over the image */
-  font-size: 2.5rem; /* Adjust the size of the timer text */
+  font-size: 2.5em; /* Adjust the size relative to the clock image */
   color: white; /* Set the timer text color */
   font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center the text */
+  width: 100%; /* Ensure the text spans the width of the clock image */
 }
 
 .button-container {
